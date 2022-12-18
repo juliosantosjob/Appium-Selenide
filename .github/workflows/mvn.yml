@@ -20,10 +20,10 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-          
+
       - name: Build Project
         run: mvn clean install -DskipTests
-           
+
       - name: Run test Android
         if: always()
         env:
@@ -33,7 +33,7 @@ jobs:
           BS_KEY: ${{ secrets.BS_KEY }}
           BS_HASH: ${{ secrets.BS_HASH }}
         run: mvn test -Dcucumber.options="--tags @regression"
-        
+
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
