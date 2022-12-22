@@ -13,7 +13,7 @@ public class Environments {
 
     private static Properties loadProperties() {
         try {
-            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/Environments.properties");
+            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/environments.properties");
             prop.load(input);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -31,9 +31,5 @@ public class Environments {
 
     public Long getTimeout() {
         return Long.valueOf(loadProperties().getProperty("timeout"));
-    }
-
-    public String getLocal() {
-        return loadProperties().getProperty("local");
     }
 }

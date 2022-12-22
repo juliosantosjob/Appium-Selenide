@@ -13,7 +13,7 @@ public class BrowserStack {
 
     private static Properties loadProperties() {
         try {
-            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/BrowserStack.properties");
+            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/browserStack.properties");
             prop.load(input);
         } catch (Exception ex) {
             ex.printStackTrace();

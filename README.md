@@ -1,12 +1,15 @@
-# Selenide-Appium Project
+#### Appium-Selenide
 
-- to view the result of the last run, you can access: https://juliosantosjob.github.io/Selenide-Appium/
+- Mobile E2E test automation project using Cucumber, Selenide and Java. The Page Objects pattern was used in this
+  project, and the execution reports configuration used the Allure report framework.
 
-## Appium
+#### Report
 
-To run this project locally you will need to download and configure some dependencies on your machine.
+- View the result of the last execution in the Pipe by clicking
+  <a href="https://juliosantosjob.github.io/Appium-Selenide">
+  here</a>.
 
-Tools used for project development:
+#### Tools used for project development:
 
 - Java
 - JUnit
@@ -19,8 +22,7 @@ Tools used for project development:
 - GH-Actions
 - GH-Pages
 
-## Networks
-###
+#### Networks
 
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/julio-santos-43428019b)
 [<img src = "https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white">](https://www.instagram.com/juli0sts/)

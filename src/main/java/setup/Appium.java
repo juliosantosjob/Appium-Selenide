@@ -13,7 +13,7 @@ public class Appium {
 
     private static Properties loadProperties() {
         try {
-            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/Appium.properties");
+            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/appium.properties");
             prop.load(input);
         } catch (Exception ex) {
             ex.printStackTrace();

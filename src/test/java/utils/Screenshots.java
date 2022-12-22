@@ -13,12 +13,6 @@ import static java.lang.System.out;
 
 public class Screenshots extends DriverFactory {
 
-    /**
-     * Screenshots settings in the project using adaptation of the allure report.
-     *
-     * @param scenario
-     */
-
     public static void shot(Scenario scenario) {
         try {
             File screenshotAs = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

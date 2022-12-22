@@ -1,8 +1,8 @@
 .idea
 .vscode
-.vscode
 target
 build
 /allure-report
 /allure-results
-BrowserStack.properties
+browserStack.properties
+app

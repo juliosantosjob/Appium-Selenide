@@ -7,7 +7,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static utils.Commands.clickText;
 import static utils.Commands.ifEnabled;
 
-
 public class AppActions extends AppPages {
 
     public static AppActions appActions() {

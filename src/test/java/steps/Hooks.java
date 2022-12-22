@@ -16,7 +16,7 @@ public class Hooks extends DriverFactory {
     @Before
     public void start(Scenario scenario) throws Exception {
         driverFactory().setDriver();
-        out.println("*************************************************");
+        out.println("*********************************");
         out.println("Starting Test Execution...");
 
         if (envs().getPlatform().equals("Android") && envs().getTools().equals("appium")) {
@@ -31,9 +31,8 @@ public class Hooks extends DriverFactory {
             out.println("App Version: [" + browserStack().getBrowserstackVersion() + "]");
             out.println("Running Scenario: [" + scenario.getName() + "]");
             out.println("Scenario Status: [" + scenario.getStatus() + "]");
-            out.println("Execution Tag: " + scenario.getSourceTagNames());
         }
-        out.println("*************************************************");
+        out.println("*********************************");
     }
 
     @AfterStep
@@ -44,9 +43,9 @@ public class Hooks extends DriverFactory {
     @After
     public void finish() {
         out.println(" ");
-        out.println("***************************");
+        out.println("*********************************");
         out.println("Finishing Test Execution...");
-        out.println("***************************");
+        out.println("*********************************");
         out.println(" ");
         driver.quit();
     }

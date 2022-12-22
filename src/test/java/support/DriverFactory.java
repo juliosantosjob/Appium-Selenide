@@ -6,7 +6,7 @@ import io.appium.java_client.MobileElement;
 
 import java.util.concurrent.TimeUnit;
 
-import static setup.Environments.*;
+import static setup.Environments.envs;
 import static support.CapsAppium.capsAppium;
 import static support.CapsBrowserStack.capsBrowserStack;
 

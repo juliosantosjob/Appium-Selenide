@@ -8,7 +8,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static setup.Appium.*;
+import static setup.Appium.appium;
 
 public class CapsAppium extends DriverFactory {
     static String URL_APPIUM = "http://localhost:4723/wd/hub";

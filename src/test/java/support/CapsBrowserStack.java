@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static support.GetSecrets.*;
+import static support.GetSecrets.getSecrets;
 
 public class CapsBrowserStack extends DriverFactory {
     static DesiredCapabilities caps = new DesiredCapabilities();
