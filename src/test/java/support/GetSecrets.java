@@ -38,10 +38,10 @@ public class GetSecrets {
     }
 
     public String getKey() {
-        if (getUser == null) {
-            getUser = browserStack().getBrowserstackKey();
+        if (getKey == null) {
+            getKey = browserStack().getBrowserstackKey();
         }
-        return getUser;
+        return getKey;
     }
 
     public String getHash() {
