@@ -11,7 +11,7 @@
 
 #### Execution
 
-- To run the project, access the "docs" folder and follow the Execute.md file step by step.
+- To run the project, access the "docs" folder and follow the step by step presented in the Execute.md file.
 
 #### Tools used for project development:
 
