@@ -125,7 +125,7 @@ Download the project apk by accessing
 this <a href="https://m.apkpure.com/br/apkpure/com.apkpure.aegon/download/3186037-apk?utm_content=1015&icn=aegon&ici=how_to_install-m&from=how_to_install-m">
 link</a>.
 
-rename the apk to `ingresso.com.apk` and add it inside the 'app' folder
+rename the apk to "ingresso.com.apk" create a folder called "app" in the root of the project and add the apk inside it
 
 example:
 
