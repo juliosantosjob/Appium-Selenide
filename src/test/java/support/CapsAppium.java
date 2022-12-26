@@ -12,13 +12,13 @@ import static setup.Appium.appium;
 
 public class CapsAppium extends DriverFactory {
     static String URL_APPIUM = "http://localhost:4723/wd/hub";
-    static DesiredCapabilities caps = new DesiredCapabilities();
 
     public static CapsAppium capsAppium() {
         return new CapsAppium();
     }
 
     public void setCapabilitiesAppium() throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("appium:app", new File(appium().getPathApk()).getAbsolutePath());
         caps.setCapability("appium:platformName", appium().getPlatformName());
         caps.setCapability("appium:deviceName", appium().getDeviceName());

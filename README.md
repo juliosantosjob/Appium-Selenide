@@ -1,13 +1,17 @@
 #### Appium-Selenide
 
-- Mobile E2E test automation project using Cucumber, Selenide and Java. The Page Objects pattern was used in this
-  project, and the execution reports configuration used the Allure report framework.
+- Mobile E2E test automation project using Cucumber, Selenide and Java. In this project, the Page Objects pattern
+  was used, and the configuration of the execution reports i used the Allure Report framework.
 
 #### Report
 
 - View the result of the last execution in the Pipe by clicking
   <a href="https://juliosantosjob.github.io/Appium-Selenide">
   here</a>.
+
+#### Execution
+
+- To run the project, access the "docs" folder and follow the Execute.md file step by step.
 
 #### Tools used for project development:
 

@@ -6,6 +6,7 @@ Feature: App search function
   Background:
     Given the APP is open
 
+  @searchMovie
   Scenario Outline: Search for a movie
     When the user accesses the "Filmes" tab
     And click on the search magnifying glass
@@ -19,6 +20,7 @@ Feature: App search function
       | "Adão Negro"                |
       | "A mulher rei"              |
 
+  @searchDuration
   Scenario: Search movie duration
     When the user accesses the "Filmes" tab
     And click on the search magnifying glass

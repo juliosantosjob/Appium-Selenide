@@ -5,5 +5,5 @@ build
 /allure-report
 /allure-results
 browserStack.properties
-app/*.apk
+/app/*.apk
 Selenide.iml

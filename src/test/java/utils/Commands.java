@@ -67,7 +67,7 @@ public class Commands {
 
     /**
      * Checks that element is disabled
-     * Example: isEnabled("my selendeElement");
+     * Example: isEnabled("my selenideElement");
      *
      * @see WebElement#isEnabled()
      */

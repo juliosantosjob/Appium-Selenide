@@ -10,7 +10,6 @@ import java.net.URL;
 import static support.GetSecrets.getSecrets;
 
 public class CapsBrowserStack extends DriverFactory {
-    static DesiredCapabilities caps = new DesiredCapabilities();
     static String URL_BS = "http://hub.browserstack.com/wd/hub";
 
     public static CapsBrowserStack capsBrowserStack() {
@@ -18,6 +17,7 @@ public class CapsBrowserStack extends DriverFactory {
     }
 
     public void setCapabilitiesBrowserStack() throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browserstack.user", getSecrets().getUser());
         caps.setCapability("browserstack.key", getSecrets().getKey());
         caps.setCapability("app", "bs://" + getSecrets().getHash());

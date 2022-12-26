@@ -17,37 +17,27 @@ public class GetSecrets {
     }
 
     public String getDevice() {
-        if (getDevice == null) {
-            getDevice = browserStack().getBrowserstackDevice();
-        }
+        if (getDevice == null) getDevice = browserStack().getBrowserstackDevice();
         return getDevice;
     }
 
     public String getVersion() {
-        if (getVersion == null) {
-            getVersion = browserStack().getBrowserstackVersion();
-        }
+        if (getVersion == null) getVersion = browserStack().getBrowserstackVersion();
         return getVersion;
     }
 
     public String getUser() {
-        if (getUser == null) {
-            getUser = browserStack().getBrowserstackUser();
-        }
+        if (getUser == null) getUser = browserStack().getBrowserstackUser();
         return getUser;
     }
 
     public String getKey() {
-        if (getKey == null) {
-            getKey = browserStack().getBrowserstackKey();
-        }
+        if (getKey == null) getKey = browserStack().getBrowserstackKey();
         return getKey;
     }
 
     public String getHash() {
-        if (getHash == null) {
-            getHash = browserStack().getBrowserstackHash();
-        }
+        if (getHash == null) getHash = browserStack().getBrowserstackHash();
         return getHash;
     }
 }
