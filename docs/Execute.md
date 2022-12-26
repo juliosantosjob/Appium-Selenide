@@ -4,15 +4,15 @@
 
 To run this project you must have the following dependencies:
 
-- <a href="https://git-scm.com/">Git</a> to clone the project on your machine.
+- <a href="https://git-scm.com/">Git</a> to clone the project on your machine;
 
-- <a href="https://www.java.com/pt-BR/">Java</a> which is the language in which the project was developed.
+- <a href="https://www.java.com/pt-BR/">Java</a> which is the language in which the project was developed;
 
-- <a href="https://maven.apache.org/download.cgi">Maven</a> for command line project execution.
+- <a href="https://maven.apache.org/download.cgi">Maven</a> to run the project via the command line;
 
-- <a href="https://nodejs.org/en/">NodeJS</a> to install and run Appium.
+- <a href="https://nodejs.org/en/">NodeJS</a> for installing Appium;
 
-- <a href="https://developer.android.com/">Android Studio</a> to emulate devices to run via appium.
+- <a href="https://developer.android.com/">Android Studio</a> to emulate devices during test execution;
 
 - <a href="https://www.jetbrains.com/pt-br/idea/download/#section=windows">IntelliJ</a> Text editor to open the project
   and install dependencies (This is my suggestion, but you can use whatever editor you want).
