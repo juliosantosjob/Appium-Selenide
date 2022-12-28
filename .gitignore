@@ -7,3 +7,4 @@ build
 browserStack.properties
 /app/*.apk
 Selenide.iml
+.eclipse/
