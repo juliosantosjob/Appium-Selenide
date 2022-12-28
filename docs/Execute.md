@@ -112,8 +112,8 @@ After the installation is complete, type the command in the terminal
 appium
 ```
 
-With this command the appium server will be initialized (To run this project it is required that the appium server is
-always up during runtime).
+With this command, the Appium server will start (to execute this project using APPIUM, it is necessary that the 
+server is always active during execution).
 
 example:
 
@@ -148,6 +148,8 @@ With the emulator and the appium up, run the command in the project's terminal
 mvn test
 ```
 
+Thus the tests will be executed using the Appium.
+  
 ### Running with BrowserStack
 
 to run the tests pointing to the Browserstack access the path "src/main/java/resources" and create a file with the
