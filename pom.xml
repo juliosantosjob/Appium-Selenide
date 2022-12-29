@@ -14,7 +14,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <selenide.version>2.2.0</selenide.version>
         <cucumber.version>7.3.3</cucumber.version>
-        <allure.version>2.19.0</allure.verison>
+        <allure.verison>2.19.0</allure.verison>
         <appium.version>7.6.0</appium.version>
         <junit.version>4.13.2</junit.version>
     </properties>
@@ -48,7 +48,7 @@
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber7-jvm</artifactId>
-            <version>${allure.version}</version>
+            <version>${allure.verison}</version>
         </dependency>
     </dependencies>
 </project>
