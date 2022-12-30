@@ -10,6 +10,7 @@ import static java.lang.System.out;
 import static setup.BrowserStack.browserStack;
 import static setup.Environments.envs;
 import static utils.Screenshots.takingScreenshot;
+import static support.GetSecrets.getSecrets;
 
 public class Hooks extends DriverFactory {
 
@@ -27,8 +28,8 @@ public class Hooks extends DriverFactory {
 
         } else if (envs().getPlatform().equals("Android") && envs().getTools().equals("bs")) {
             out.println("Platform Name: [" + envs().getPlatform() + "]");
-            out.println("Device Name: [" + browserStack().getBrowserstackDevice() + "]");
-            out.println("App Version: [" + browserStack().getBrowserstackVersion() + "]");
+            out.println("Device Name: [" + getSecrets().getDevice() + "]");
+            out.println("App Version: [" + getSecrets().getVersion() + "]");
             out.println("Running Scenario: [" + scenario.getName() + "]");
             out.println("Scenario Status: [" + scenario.getStatus() + "]");
         }
