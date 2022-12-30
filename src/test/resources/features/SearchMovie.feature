@@ -18,7 +18,7 @@ Feature: App search function
       | Film_Name                   |
       | "Avatar: O Caminho da Água" |
       | "Adão Negro"                |
-      | "A mulher rei"              |
+      | "Mundo Estranho"            |
 
   @searchDuration
   Scenario: Search movie duration
