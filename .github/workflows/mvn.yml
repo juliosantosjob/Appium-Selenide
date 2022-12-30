@@ -27,7 +27,7 @@ jobs:
         if: always()
         env:
           BS_DEVICE: Google Pixel 3
-          BS_VERSION: 9.0
+          BS_VERSION: '9.0'
           BS_USER: ${{ secrets.BS_USER }}
           BS_KEY: ${{ secrets.BS_KEY }}
           BS_HASH: ${{ secrets.BS_HASH }}
