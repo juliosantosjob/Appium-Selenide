@@ -17,7 +17,7 @@ Feature: App search function
     Examples:
       | Film_Name                   |
       | "Avatar: O Caminho da Água" |
-      | "Adão Negro"                |
+      | "Aterrorizante 2"           |
       | "Mundo Estranho"            |
 
   @searchDuration
