@@ -15,10 +15,10 @@ Feature: App search function
     Then it displays the information of <Film_Name>
 
     Examples:
-      | Film_Name                   |
-      | "Avatar: O Caminho da Água" |
-      | "Terrifier 2"               |
-      | "Mundo Estranho"            |
+      | Film_Name                          |
+      | "Avatar: O Caminho da Água"        |
+      | "Terrifier 2"                      |
+      | "Gato de Botas 2: O Último Pedido" |
 
   @searchDuration
   Scenario: Search movie duration
