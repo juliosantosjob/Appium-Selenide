@@ -29,7 +29,7 @@ public class Hooks extends DriverFactory {
         } else if (envs().getPlatform().equals("Android") && envs().getTools().equals("bs")) {
             out.println("Platform Name: [" + envs().getPlatform() + "]");
             out.println("Device Name: [" + getSecrets().getDevice() + "]");
-            out.println("App Version: [" + getSecrets().getVersion() + "]");
+            out.println("BrowserStack Version: [" + getSecrets().getVersion() + "]");
             out.println("Running Scenario: [" + scenario.getName() + "]");
             out.println("Scenario Status: [" + scenario.getStatus() + "]");
         }
