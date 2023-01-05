@@ -1,4 +1,4 @@
-## Execution of the Appium-Selenide project
+## Execution of the Appium-Selenide-Ingresso.com project
 
 <p>
 
