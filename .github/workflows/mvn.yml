@@ -3,12 +3,7 @@ name: Pipe
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  schedule:
-    - cron: '0 12,15,20 * * 1-5'
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
