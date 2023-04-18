@@ -36,6 +36,6 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
-          build_dir: ./target/cucumber-report-html/cucumber-html-reports/**.html
+          build_dir: ./target/cucumber-report-html/cucumber-html-reports/feature-overview.html
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
