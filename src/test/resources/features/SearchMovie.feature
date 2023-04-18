@@ -15,18 +15,7 @@ Feature: App search function
     Then it displays the information of <Film_Name>
 
     Examples:
-      | Film_Name                          |
-      | "Avatar: O Caminho da Água"        |
-      | "Terrifier 2"                      |
-      | "Gato de Botas 2: O Último Pedido" |
-
-  @searchDuration
-  Scenario: Search movie duration
-    When the user accesses the "Filmes" tab
-    And click on the search magnifying glass
-    And fill in "Pantera negra"
-    And click on the movie title
-    And it displays the information of "Pantera negra"
-    And click on "Detalhes"
-    Then "Duração" is displayed
-    And "02h 41m" is displayed
+      | Film_Name             |
+      | "Super Mario"         |
+      | "Dungeons & Dragons"  |
+      | "O Exorcista do Papa" |

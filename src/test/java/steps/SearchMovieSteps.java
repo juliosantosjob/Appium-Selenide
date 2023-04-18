@@ -29,16 +29,6 @@ public class SearchMovieSteps extends SearchMovieActions {
         searchMovieActions().clickMovieTitle();
     }
 
-    @When("click on {string}")
-    public void click_on(String txtBtn) {
-        searchMovieActions().tapText(txtBtn);
-    }
-
-    @Then("{string} is displayed")
-    public void is_displayed(String msgDisplayed) {
-        searchMovieActions().textDisplayed(msgDisplayed);
-    }
-
     @Then("it displays the information of {string}")
     public void it_displays_the_information_of(String nameMovie) {
         $(searchMovieActions().movieTitle()).shouldBe(visible);

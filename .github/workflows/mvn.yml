@@ -3,7 +3,7 @@ name: Pipe
 on:
   push:
     branches: [ master ]
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,30 +26,16 @@ jobs:
           BS_USER: ${{ secrets.BS_USER }}
           BS_KEY: ${{ secrets.BS_KEY }}
           BS_HASH: ${{ secrets.BS_HASH }}
-        run: mvn test
+        run: mvn clean test
 
-      - name: Get Allure history
-        uses: actions/checkout@v2
+      - name: Generate verify cucumber report
+        run: mvn verify -DskipTests
+
+      - name: Deploy to GitHub Pages
         if: always()
-        continue-on-error: true
+        uses: crazy-max/ghaction-github-pages@v3
         with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        id: allure-report
-        with:
-          allure_results: ./allure-results
-          gh_pages: gh-pages
-          allure_report: allure-report
-          allure_history: allure-history
-
-      - name: Deploy report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v2
+          target_branch: gh-pages
+          build_dir: ./target/cucumber-report-html/cucumber-html-reports/**.html
         env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

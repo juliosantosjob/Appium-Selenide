@@ -1,9 +1,6 @@
 package support;
 
-import org.junit.Test;
-
 import static setup.BrowserStack.browserStack;
-import static setup.Environments.envs;
 
 public class GetSecrets {
     private String getDevice = System.getenv("BS_DEVICE");

@@ -7,7 +7,6 @@ import io.cucumber.java.Scenario;
 import support.DriverFactory;
 
 import static java.lang.System.out;
-import static setup.BrowserStack.browserStack;
 import static setup.Environments.envs;
 import static utils.Screenshots.takingScreenshot;
 import static support.GetSecrets.getSecrets;
@@ -23,7 +22,6 @@ public class Hooks extends DriverFactory {
         if (envs().getPlatform().equals("Android") && envs().getTools().equals("appium")) {
             out.println("Platform Name: [" + envs().getPlatform() + "]");
             out.println("Running Scenario: [" + scenario.getName() + "]");
-            out.println("Scenario Status: [" + scenario.getStatus() + "]");
             out.println("Execution Tag: " + scenario.getSourceTagNames());
 
         } else if (envs().getPlatform().equals("Android") && envs().getTools().equals("bs")) {
@@ -31,7 +29,6 @@ public class Hooks extends DriverFactory {
             out.println("Device Name: [" + getSecrets().getDevice() + "]");
             out.println("BrowserStack Version: [" + getSecrets().getVersion() + "]");
             out.println("Running Scenario: [" + scenario.getName() + "]");
-            out.println("Scenario Status: [" + scenario.getStatus() + "]");
         }
         out.println("*********************************");
     }
@@ -42,9 +39,10 @@ public class Hooks extends DriverFactory {
     }
 
     @After
-    public void finish() {
+    public void finish(Scenario scenario) {
         out.println(" ");
         out.println("*********************************");
+        out.println("Scenario Status: [" + scenario.getStatus() + "]");
         out.println("Finishing Test Execution...");
         out.println("*********************************");
         out.println(" ");
