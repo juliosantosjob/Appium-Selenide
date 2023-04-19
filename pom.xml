@@ -67,9 +67,9 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Appium-Selenide-Ingresso.com</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                            <projectName>Ingresso.com</projectName>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <cucumberOutput>${project.build.directory}</cucumberOutput>
                         </configuration>
                     </execution>
                 </executions>
