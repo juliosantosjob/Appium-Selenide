@@ -70,7 +70,7 @@
                             <projectName>Ingresso.com</projectName>
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <cucumberOutput>${project.build.directory}</cucumberOutput>
-                        </configuration>
+                            </configuration>
                     </execution>
                 </executions>
             </plugin>
