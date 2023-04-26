@@ -34,11 +34,8 @@ jobs:
       - name: Move report to folder reports
         run: mvn test -Dtest=ReportHelper
 
-      - name: Deploy to GitHub Pages
-        if: always()
-        uses: crazy-max/ghaction-github-pages@v3
+      - name: Build and deploy gh-pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          target_branch: gh-pages
-          build_dir: ./target/cucumber-html-reports/embeddings
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: ./target/cucumber-html-reports/embeddings
