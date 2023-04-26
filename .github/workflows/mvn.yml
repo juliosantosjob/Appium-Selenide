@@ -32,7 +32,7 @@ jobs:
           BS_USER: ${{ secrets.BS_USER }}
           BS_KEY: ${{ secrets.BS_KEY }}
           BS_HASH: ${{ secrets.BS_HASH }}
-        run: mvn test
+        run: mvn clean test
 
       - name: Get Allure history
         uses: actions/checkout@v2
