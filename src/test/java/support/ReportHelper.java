@@ -8,9 +8,7 @@ public class ReportHelper {
 
   @Test
   public void report() {
-
     File arquivo = new File("target/cucumber-html-reports/feature-overview.html");
-
     File dir = new File("target/cucumber-html-reports/embeddings");
 
     boolean ok = arquivo.renameTo(new File(dir, arquivo.getName()));
