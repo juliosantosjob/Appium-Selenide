@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Apr 30 12:32:39 GMT 2023","Sun Apr 30 12:33:30 GMT 2023","50393","","App search function","","Search for a movie","","Search for a movie",""
+"passed","Sun Apr 30 12:31:08 GMT 2023","Sun Apr 30 12:31:53 GMT 2023","44206","","App search function","","App version","","App version",""
+"passed","Sun Apr 30 12:31:53 GMT 2023","Sun Apr 30 12:32:39 GMT 2023","46419","","App search function","","Search for a movie","","Search for a movie",""
+"passed","Sun Apr 30 12:33:30 GMT 2023","Sun Apr 30 12:34:16 GMT 2023","46469","","App search function","","Search for a movie","","Search for a movie",""
