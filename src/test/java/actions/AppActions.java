@@ -1,39 +1,37 @@
 package actions;
 
-import com.codeborne.selenide.SelenideElement;
 import pages.AppPages;
 
-import static com.codeborne.selenide.Condition.visible;
+import static utils.Commands.click;
 import static utils.Commands.clickText;
-import static utils.Commands.ifEnabled;
+
+import static utils.Asserts.isVisible;
+import static utils.Asserts.textVisible;
+import static utils.Asserts.contains;
 
 public class AppActions extends AppPages {
 
-    public static AppActions appActions() {
-        return new AppActions();
-    }
-
     public void AppIsOpen() {
-        alertButton.click();
+        textVisible("Quer encontrar os cinemas mais próximos de você?");
+        clickText("OK");
 
-        if (allowVisible.isDisplayed()) {
-            btnAllow.click();
-            usrButton.should(visible);
+        if(permissionMsg.isDisplayed()) {
+            clickText("Only this time");
         } else {
-            btnAllowDuringUse.click();
+            clickText("Allow");
         }
     }
 
     public void tapProfileButton() {
-        ifEnabled(usrButton);
-        ifEnabled(usrButton).click();
+        isVisible(btnUser);
+        click(btnUser);
     }
 
     public void tapAboutButton(String btnAbout) {
         clickText(btnAbout);
     }
 
-    public SelenideElement seeVersion() {
-        return version;
+    public void seeVersion(String version) {
+        contains(fldVersion, version);
     }
 }

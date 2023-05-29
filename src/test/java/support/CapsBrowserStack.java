@@ -12,11 +12,7 @@ import static support.GetSecrets.getSecrets;
 public class CapsBrowserStack extends DriverFactory {
     static String URL_BS = "http://hub.browserstack.com/wd/hub";
 
-    public static CapsBrowserStack capsBrowserStack() {
-        return new CapsBrowserStack();
-    }
-
-    public void setCapabilitiesBrowserStack() throws MalformedURLException {
+    public static void setCapabilitiesBrowserStack() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("browserstack.user", getSecrets().getUser());
         caps.setCapability("browserstack.key", getSecrets().getKey());

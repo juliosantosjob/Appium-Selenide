@@ -6,9 +6,11 @@ import io.appium.java_client.MobileElement;
 
 import java.util.concurrent.TimeUnit;
 
-import static setup.Environments.envs;
-import static support.CapsAppium.capsAppium;
-import static support.CapsBrowserStack.capsBrowserStack;
+import static setup.Environments.getPlatform;
+import static setup.Environments.getTools;
+import static setup.Environments.getTimeout;
+import static support.CapsAppium.setCapabilitiesAppium;
+import static support.CapsBrowserStack.setCapabilitiesBrowserStack;
 
 public class DriverFactory {
     public static AppiumDriver<MobileElement> driver;
@@ -18,14 +20,15 @@ public class DriverFactory {
     }
 
     public void setDriver() throws Exception {
-        if (envs().getPlatform().equals("Android") && envs().getTools().equals("appium")) {
-            capsAppium().setCapabilitiesAppium();
-        } else if (envs().getPlatform().equals("Android") && envs().getTools().equals("bs")) {
-            capsBrowserStack().setCapabilitiesBrowserStack();
+        if (getPlatform().equals("Android") && getTools().equals("appium")) {
+            setCapabilitiesAppium();
+        } else if (getPlatform().equals("Android") && getTools().equals("bs")) {
+            setCapabilitiesBrowserStack();
         } else {
             throw new IllegalArgumentException("Invalid execution argument!");
         }
-        driver.manage().timeouts().implicitlyWait(envs().getTimeout(), TimeUnit.SECONDS);
+        
+        driver.manage().timeouts().implicitlyWait(getTimeout(), TimeUnit.SECONDS);
         WebDriverRunner.setWebDriver(driver);
     }
 }

@@ -1,33 +1,32 @@
 package actions;
 
-import com.codeborne.selenide.SelenideElement;
 import pages.SearchMoviePage;
 
 import static utils.Commands.clickText;
+import static utils.Commands.click;
+import static utils.Commands.fill;
+
+import static utils.Asserts.contains;
 
 public class SearchMovieActions extends SearchMoviePage {
-
-    public static SearchMovieActions searchMovieActions() {
-        return new SearchMovieActions();
-    }
 
     public void clickBtnMovie(String Movie) {
         clickText(Movie);
     }
 
     public void clickMagnifier() {
-        actionSearch.click();
+        click(actionSearch);
     }
 
     public void fillMovie(String nameMovie) {
-        searchSrcText.setValue(nameMovie);
+        fill(searchSrcText, nameMovie);
     }
 
     public void clickMovieTitle() {
-        txtMovie.click();
+        click(txtMovie);
     }
 
-    public SelenideElement movieTitle() {
-        return movieTitle;
+    public void seeMovieTitle(String nameMovie) {
+        contains(movieTitle, nameMovie);
     }
 }

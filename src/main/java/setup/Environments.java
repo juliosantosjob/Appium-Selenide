@@ -7,10 +7,6 @@ import java.util.Properties;
 public class Environments {
     static Properties prop = new Properties();
 
-    public static Environments envs() {
-        return new Environments();
-    }
-
     private static Properties loadProperties() {
         try {
             InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/environments.properties");
@@ -21,15 +17,15 @@ public class Environments {
         return prop;
     }
 
-    public String getPlatform() {
+    public static String getPlatform() {
         return loadProperties().getProperty("platform");
     }
 
-    public String getTools() {
+    public static String getTools() {
         return loadProperties().getProperty("tools");
     }
 
-    public Long getTimeout() {
+    public static Long getTimeout() {
         return Long.valueOf(loadProperties().getProperty("timeout"));
     }
 }

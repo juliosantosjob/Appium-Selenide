@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class BrowserStack {
-    static Properties prop = new Properties();
+    private static Properties prop = new Properties();
 
     public static BrowserStack browserStack() {
         return new BrowserStack();
@@ -13,7 +13,8 @@ public class BrowserStack {
 
     private static Properties loadProperties() {
         try {
-            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/browserStack.properties");
+            InputStream input = new FileInputStream(System.getProperty("user.dir") +
+                    "/src/main/java/resources/browserStack.properties");
             prop.load(input);
         } catch (Exception ex) {
             ex.printStackTrace();

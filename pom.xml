@@ -17,6 +17,7 @@
         <allure.verison>2.19.0</allure.verison>
         <appium.version>7.6.0</appium.version>
         <junit.version>4.13.2</junit.version>
+        <junitJ.version>5.9.3</junitJ.version>
     </properties>
 
     <dependencies>
@@ -29,6 +30,11 @@
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>${appium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junitJ.version}</version>
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>

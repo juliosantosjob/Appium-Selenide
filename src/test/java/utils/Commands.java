@@ -6,12 +6,27 @@ import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.disabled;
+
 import static com.codeborne.selenide.Selenide.$;
 import static java.lang.System.out;
-import static setup.Environments.envs;
+import static setup.Environments.getTimeout;
 
 public class Commands {
+
+    /**
+     * click element.
+     * Example: click(element);
+     *
+     * @see WebElement#click()
+     */
+
+    public static SelenideElement click(SelenideElement selenideElement) {
+        selenideElement.click();
+
+        return selenideElement;
+    }
 
     /**
      * Command to click visible text on screen
@@ -30,21 +45,6 @@ public class Commands {
 
     /**
      * Command to validate visible text on the screen.
-     * Example: textVisible("my text");
-     *
-     * @param text
-     */
-
-    public static void textVisible(String text) {
-        try {
-            $(By.xpath("//*[@text='" + text + "']")).shouldBe(visible);
-        } catch (Exception e) {
-            out.println("Failed to click on text" + e);
-        }
-    }
-
-    /**
-     * Command to validate visible text on the screen.
      * Example: isEnable("my selendeElement");
      *
      * @param selenideElement
@@ -58,7 +58,7 @@ public class Commands {
 
     public static SelenideElement ifEnabled(SelenideElement selenideElement) {
         try {
-            selenideElement.shouldBe(enabled, Duration.ofSeconds(envs().getTimeout()));
+            selenideElement.shouldBe(enabled, Duration.ofSeconds(getTimeout()));
         } catch (Exception e) {
             out.println("Failed to wait for element to enabled! " + e);
         }
@@ -71,11 +71,25 @@ public class Commands {
      *
      * @see WebElement#isEnabled()
      */
+
     public static void ifDisabled(SelenideElement selenideElement) {
         try {
             selenideElement.shouldBe(disabled, Duration.ofSeconds(10));
         } catch (Exception e) {
             out.println("Failed to wait for element to disabled! " + e);
         }
+    }
+
+    /**
+     * Command to fill string on input.
+     * 
+     * @param selenideElement
+     * @param text
+     */
+
+    public static SelenideElement fill(SelenideElement selenideElement, String text) {
+        selenideElement.setValue(text);
+
+        return selenideElement;
     }
 }

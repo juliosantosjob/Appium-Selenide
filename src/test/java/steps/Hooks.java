@@ -7,7 +7,8 @@ import io.cucumber.java.Scenario;
 import support.DriverFactory;
 
 import static java.lang.System.out;
-import static setup.Environments.envs;
+import static setup.Environments.getPlatform;
+import static setup.Environments.getTools;
 import static utils.Screenshots.takingScreenshot;
 import static support.GetSecrets.getSecrets;
 
@@ -19,13 +20,13 @@ public class Hooks extends DriverFactory {
         out.println("*********************************");
         out.println("Starting Test Execution...");
 
-        if (envs().getPlatform().equals("Android") && envs().getTools().equals("appium")) {
-            out.println("Platform Name: [" + envs().getPlatform() + "]");
+        if (getPlatform().equals("Android") && getTools().equals("appium")) {
+            out.println("Platform Name: [" + getPlatform() + "]");
             out.println("Running Scenario: [" + scenario.getName() + "]");
             out.println("Execution Tag: " + scenario.getSourceTagNames());
 
-        } else if (envs().getPlatform().equals("Android") && envs().getTools().equals("bs")) {
-            out.println("Platform Name: [" + envs().getPlatform() + "]");
+        } else if (getPlatform().equals("Android") && getTools().equals("bs")) {
+            out.println("Platform Name: [" + getPlatform() + "]");
             out.println("Device Name: [" + getSecrets().getDevice() + "]");
             out.println("BrowserStack Version: [" + getSecrets().getVersion() + "]");
             out.println("Running Scenario: [" + scenario.getName() + "]");
