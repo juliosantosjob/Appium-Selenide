@@ -1,7 +1,7 @@
 #### Appium-Selenide-ingresso.com
 
 - Mobile E2E test automation project using Cucumber, Selenide and Java. In this project, the Page Objects pattern
-  was used, and the configuration of the execution reports i used the Cucumber Report framework.
+  was used, and the configuration of the execution reports i used the Allure Report framework.
 
 #### Report
 
@@ -22,7 +22,7 @@
 - Appium
 - BrowserStack
 - Cucumber(BDD)/Gherkin
-- Cucumber Report
+- Allure Report
 - GH-Actions
 - GH-Pages
 
