@@ -8,6 +8,6 @@ import static com.codeborne.selenide.Selenide.$;
 public class SearchMoviePage {
     protected SelenideElement actionSearch = $(By.id("action_search"));
     protected SelenideElement searchSrcText = $(By.id("search_src_text"));
-    protected SelenideElement txtMovie = $(By.id("imageview_movie"));
+    protected SelenideElement txtMovie = $(By.id("imageviewPoster"));
     protected SelenideElement movieTitle = $(By.id("movieTitle"));
 }
