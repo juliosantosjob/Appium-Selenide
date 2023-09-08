@@ -15,7 +15,7 @@ Feature: App search function
     Then it displays the information of <Film_Name>
 
     Examples:
-      | Film_Name            |
-      | "Super Mario"        |
-      | "The Flash"          |
-      | "Velozes e Furiosos" |
+      | Film_Name     |
+      | "A Freira 2"  |
+      | "Oppenheimer" |
+      | "Barbie"      |
