@@ -58,9 +58,7 @@ to create the emulator access the android studio settings in the upper right cor
 
 - Set device name;
 
-- The AVD will create the Emulator and you can launch it by clicking the "Play" button in the "Actions" column.
-
-If you need help creating a device, access this <a href="https://react-native.rocketseat.dev/android/emulador/">
+- The AVD will create the Emulator and you can launch it by clicking the "Play" button in the "Actions" column. (If you need help creating a device, access this <a href="https://react-native.rocketseat.dev/android/emulador/">
 article</a>).
 
 <p>
