@@ -5,13 +5,13 @@ import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import support.DriverFactory;
+import support.BaseScreen;
 
 import java.io.File;
 
 import static java.lang.System.out;
 
-public class Screenshots extends DriverFactory {
+public class Screenshots extends BaseScreen {
 
     public static void shot(Scenario scenario) {
         try {
@@ -23,13 +23,7 @@ public class Screenshots extends DriverFactory {
     }
 
     public static void takingScreenshot(Scenario scenario) {
-        if (!scenario.isFailed()) {
-            shot(scenario);
-        } else {
-            out.println(" ");
-            out.println("****** Scenario: [" + scenario.getName() + "] is [" + scenario.getStatus() + "]");
-            out.println(" ");
-            shot(scenario);
-        }
+        shot(scenario);
+        out.println("\nScreenshot taken!");
     }
 }

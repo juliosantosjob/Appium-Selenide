@@ -1,20 +1,24 @@
 package setup;
 
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.Properties;
 
-public class Environments {
-    static Properties prop = new Properties();
+public class Env {
+    private static final String PATH_PROP = "/src/main/java/resources/env.properties";
+    private static final String PATH_PROJECT = System.getProperty("user.dir") + PATH_PROP;
+    private static final Properties PROP = new Properties();
 
-    private static Properties loadProperties() {
+    public static Env env() {
+        return new Env();
+    }
+
+    public static Properties loadProperties() {
         try {
-            InputStream input = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/resources/environments.properties");
-            prop.load(input);
+            PROP.load(new FileInputStream(PATH_PROJECT));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return prop;
+        return Env.PROP;
     }
 
     public static String getPlatform() {

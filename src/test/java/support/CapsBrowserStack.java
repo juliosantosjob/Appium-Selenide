@@ -1,25 +1,19 @@
 package support;
 
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import static support.GetSecrets.getSecrets;
 
-public class CapsBrowserStack extends DriverFactory {
-    static String URL_BS = "http://hub.browserstack.com/wd/hub";
+public class CapsBrowserStack extends BaseScreen {
+    private static DesiredCapabilities caps = new DesiredCapabilities();
 
-    public static void setCapabilitiesBrowserStack() throws MalformedURLException {
-        DesiredCapabilities caps = new DesiredCapabilities();
+    public static DesiredCapabilities getCapabilitiesBrowserStack() throws MalformedURLException {
         caps.setCapability("browserstack.user", getSecrets().getUser());
         caps.setCapability("browserstack.key", getSecrets().getKey());
         caps.setCapability("app", "bs://" + getSecrets().getHash());
         caps.setCapability("device", getSecrets().getDevice());
         caps.setCapability("os_version", getSecrets().getVersion());
-
-        driver = new AndroidDriver<MobileElement>(new URL(URL_BS), caps);
+        return CapsBrowserStack.caps;
     }
 }

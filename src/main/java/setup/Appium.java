@@ -1,39 +1,36 @@
 package setup;
 
 import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class Appium {
-    public static String Path = "/src/main/java/resources/appium.properties";
-    public static String platformName;
-    public static String deviceName;
-    public static String app;
-    public static Properties prop = new Properties();
+    private static final String PATH_PROP = "/src/main/java/resources/appium.properties";
+    private static final String PATH_PROJECT = System.getProperty("user.dir") + PATH_PROP;
+    private static final Properties PROP = new Properties();
 
     public static Appium appium() {
         return new Appium();
     }
 
-    public static Properties loadProperties() {
+    private static Properties loadProperties() {
         try {
-            InputStream input = new FileInputStream(System.getProperty("user.dir") + Path);
-            prop.load(input);
-        } catch (Exception ex) {
+            PROP.load(new FileInputStream(PATH_PROJECT));
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return prop;
+        return Appium.PROP;
     }
 
     public String getPlatformName() {
-        return platformName = loadProperties().getProperty("platformName");
+        return loadProperties().getProperty("platformName");
     }
 
     public String getDeviceName() {
-        return deviceName = loadProperties().getProperty("deviceName");
+        return loadProperties().getProperty("deviceName");
     }
 
     public String getPathApk() {
-        return app = loadProperties().getProperty("app");
+        return loadProperties().getProperty("app");
     }
 }

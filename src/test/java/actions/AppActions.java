@@ -2,12 +2,11 @@ package actions;
 
 import pages.AppPages;
 
-import static utils.Commands.click;
-import static utils.Commands.clickText;
-
-import static utils.Asserts.isVisible;
-import static utils.Asserts.textVisible;
-import static utils.Asserts.contains;
+import static support.BaseScreen.click;
+import static support.BaseScreen.textVisible;
+import static support.BaseScreen.clickText;
+import static support.BaseScreen.contains;
+import static support.BaseScreen.isVisible;
 
 public class AppActions extends AppPages {
 

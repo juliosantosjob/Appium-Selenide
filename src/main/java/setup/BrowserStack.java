@@ -1,11 +1,13 @@
 package setup;
 
 import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class BrowserStack {
-    private static Properties prop = new Properties();
+    private static final String PATH_PROP = "/src/main/java/resources/browserStack.properties";
+    private static final String PATH_PROJECT = System.getProperty("user.dir") + PATH_PROP;
+    private static final Properties PROP = new Properties();
 
     public static BrowserStack browserStack() {
         return new BrowserStack();
@@ -13,13 +15,11 @@ public class BrowserStack {
 
     private static Properties loadProperties() {
         try {
-            InputStream input = new FileInputStream(System.getProperty("user.dir") +
-                    "/src/main/java/resources/browserStack.properties");
-            prop.load(input);
-        } catch (Exception ex) {
+            PROP.load(new FileInputStream(PATH_PROJECT));
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
-        return prop;
+        return BrowserStack.PROP;
     }
 
     public String getBrowserstackDevice() {

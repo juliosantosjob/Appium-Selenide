@@ -1,52 +1,76 @@
 package steps;
 
 import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import support.DriverFactory;
+
+import support.BaseScreen;
 
 import static java.lang.System.out;
-import static setup.Environments.getPlatform;
-import static setup.Environments.getTools;
+import static setup.Env.getPlatform;
+import static setup.Env.getTools;
 import static utils.Screenshots.takingScreenshot;
+
+import static setup.Env.getTimeout;
+import java.util.concurrent.TimeUnit;
+
 import static support.GetSecrets.getSecrets;
 
-public class Hooks extends DriverFactory {
+public class Hooks extends BaseScreen {
+    private String platform = getPlatform().toUpperCase();
+    private String tools = getTools().toLowerCase();
 
     @Before
     public void start(Scenario scenario) throws Exception {
-        driverFactory().setDriver();
-        out.println("*********************************");
-        out.println("Starting Test Execution...");
+        BaseScreen.setDriver();
+        getDriver().manage().timeouts().implicitlyWait(getTimeout(), TimeUnit.SECONDS);
 
-        if (getPlatform().equals("Android") && getTools().equals("appium")) {
-            out.println("Platform Name: [" + getPlatform() + "]");
-            out.println("Running Scenario: [" + scenario.getName() + "]");
-            out.println("Execution Tag: " + scenario.getSourceTagNames());
+        if (platform.equals("ANDROID")) {
+            switch (tools) {
+                case "appium":
+                    logAppiumDetails(scenario);
+                    break;
 
-        } else if (getPlatform().equals("Android") && getTools().equals("bs")) {
-            out.println("Platform Name: [" + getPlatform() + "]");
-            out.println("Device Name: [" + getSecrets().getDevice() + "]");
-            out.println("BrowserStack Version: [" + getSecrets().getVersion() + "]");
-            out.println("Running Scenario: [" + scenario.getName() + "]");
+                case "bs":
+                    logBrowserStackDetails(scenario);
+                    break;
+
+                default:
+                    throw new IllegalArgumentException("Invalid tools argument: " + tools);
+            }
+        } else {
+            throw new IllegalArgumentException("Invalid platform argument: " + platform);
         }
-        out.println("*********************************");
     }
 
-    @AfterStep
-    public void addingEvidenceReport(Scenario scenario) {
-        takingScreenshot(scenario);
+    private void logAppiumDetails(Scenario scenario) {
+        out.println(
+                "\n=======================================\n" +
+                        "Execution by Appium \n\n" +
+                        "Platform:     [" + getPlatform() + "]\n" +
+                        "Scenario:     [" + scenario.getName() + "]\n" +
+                        "Tags:         " + scenario.getSourceTagNames() + "\n\n" +
+                        "Steps Executed:");
+    }
+
+    private void logBrowserStackDetails(Scenario scenario) {
+        out.println(
+                "\n=======================================*\n" +
+                        "Execution by BrowserStack \n\n" +
+                        "Platform:     [" + getPlatform() + "]\n" +
+                        "Device:       [" + getSecrets().getDevice() + "]\n" +
+                        "BS Version:   [" + getSecrets().getVersion() + "]\n" +
+                        "Scenario:     [" + scenario.getName() + "]\n" +
+                        "Tags:         " + scenario.getSourceTagNames() + "\n\n" +
+                        "Steps Executed:");
     }
 
     @After
     public void finish(Scenario scenario) {
-        out.println(" ");
-        out.println("*********************************");
-        out.println("Scenario Status: [" + scenario.getStatus() + "]");
-        out.println("Finishing Test Execution...");
-        out.println("*********************************");
-        out.println(" ");
-        driver.quit();
+        takingScreenshot(scenario);
+        out.println("\n" +
+                "Status: " + (scenario.isFailed() ? "FAILED" : "PASSED") +
+                "\n=======================================\n");
+        BaseScreen.tearDown();
     }
 }
