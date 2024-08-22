@@ -1,36 +1,26 @@
-package setup;
+package env.setup;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
-public class Appium {
-    private static final String PATH_PROP = "/src/main/java/resources/appium.properties";
-    private static final String PATH_PROJECT = System.getProperty("user.dir") + PATH_PROP;
-    private static final Properties PROP = new Properties();
+public class Envs {
+    private static String PATH_PROP = "/src/test/java/env/resources/env.properties";
+    private static String LOAD_PATH = System.getProperty("user.dir") + PATH_PROP;
+    private static Properties prop;
 
-    public static Appium appium() {
-        return new Appium();
-    }
-
-    private static Properties loadProperties() {
+    private static Properties loadProp() {
         try {
-            PROP.load(new FileInputStream(PATH_PROJECT));
-        } catch (IOException ex) {
-            ex.printStackTrace();
+            Envs.prop = new Properties();
+            Envs.prop.load(new FileInputStream(LOAD_PATH));
+
+        } catch (Exception e) {
+            System.out.println("**** WARNING: Missing env.properties. Add base URL! **** " + e);
         }
-        return Appium.PROP;
+        return Envs.prop;
     }
 
-    public String getPlatformName() {
-        return loadProperties().getProperty("platformName");
+    public static String getEnv(String env) {
+        return Envs.loadProp().getProperty(env);
     }
-
-    public String getDeviceName() {
-        return loadProperties().getProperty("deviceName");
-    }
-
-    public String getPathApk() {
-        return loadProperties().getProperty("app");
-    }
+    
 }
