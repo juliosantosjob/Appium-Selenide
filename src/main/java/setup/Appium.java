@@ -14,7 +14,7 @@ public class Envs {
             Envs.prop.load(new FileInputStream(LOAD_PATH));
 
         } catch (Exception e) {
-            System.out.println("**** WARNING: Missing env.properties. Add base URL! **** " + e);
+            System.out.println("**** WARNING: Missing file \"env.properties\". Create the file ande add the base URL! **** " + e);
         }
         return Envs.prop;
     }
